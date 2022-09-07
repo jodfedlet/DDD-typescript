@@ -1,13 +1,13 @@
 import Address from "./address";
 
-class Customer {
+export default class Customer {
 
     _id: string;
     _name: string;
     _address!: Address;
     _active: boolean = false;
 
-    constructor(id: string, name: string, address: string) {
+    constructor(id: string, name: string) {
         this._id = id;
         this._name = name;
         this.validate();
