@@ -1,8 +1,7 @@
 import Address from "./address";
 
 export default class Customer {
-
-    _id: string;
+       _id: string;
     _name: string;
     _address!: Address;
     _active: boolean = false;
@@ -11,6 +10,10 @@ export default class Customer {
         this._id = id;
         this._name = name;
         this.validate();
+    }
+
+    get name(): string{
+        return this._name;
     }
 
     validate() {
@@ -41,5 +44,9 @@ export default class Customer {
 
      set address(address: Address) {
         this._address = address;
+     }
+    
+    isActive() {
+        return this._active;
     }
 }
