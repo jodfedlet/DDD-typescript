@@ -1,52 +1,52 @@
 import Address from "./address";
 
 export default class Customer {
-       _id: string;
-    _name: string;
-    _address!: Address;
-    _active: boolean = false;
+  _id: string;
+  _name: string;
+  _address!: Address;
+  _active: boolean = false;
 
-    constructor(id: string, name: string) {
-        this._id = id;
-        this._name = name;
-        this.validate();
+  constructor(id: string, name: string) {
+    this._id = id;
+    this._name = name;
+    this.validate();
+  }
+
+  get name(): string {
+    return this._name;
+  }
+
+  validate() {
+    if (this._id.length === 0) {
+      throw new Error("Id is required");
     }
 
-    get name(): string{
-        return this._name;
+    if (this._name.length === 0) {
+      throw new Error("Name is required");
     }
+  }
 
-    validate() {
-        if (this._id.length === 0) {
-            throw new Error("Id is required");
-        }
+  changeName(name: string) {
+    this._name = name;
+    this.validate();
+  }
 
-        if (this._name.length === 0) {
-            throw new Error("Name is required");
-        }
+  activate() {
+    if (!this._address) {
+      throw new Error("Address is mandatory to activate a customer");
     }
+    this._active = true;
+  }
 
-    changeName(name: string) {
-        this._name = name;
-        this.validate();
-    }
+  deactivate() {
+    this._active = false;
+  }
 
-    activate() {
-        if (!this._address) {
-            throw new Error("Address is mandatory to activate a customer");
-        }
-        this._active = true;
-    }
+  set address(address: Address) {
+    this._address = address;
+  }
 
-    deactivate() {
-        this._active = false;
-    }
-
-     set address(address: Address) {
-        this._address = address;
-     }
-    
-    isActive() {
-        return this._active;
-    }
+  isActive() {
+    return this._active;
+  }
 }
