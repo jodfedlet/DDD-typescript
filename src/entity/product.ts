@@ -15,7 +15,7 @@ export default class Product {
     this.validate();
   }
 
-  get name() {
+  get name(): string {
     return this._name;
   }
 
@@ -24,7 +24,7 @@ export default class Product {
     this.validate();
   }
 
-  get price() {
+  get price(): number {
     return this._price;
   }
 

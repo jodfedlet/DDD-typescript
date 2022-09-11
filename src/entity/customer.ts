@@ -46,7 +46,7 @@ export default class Customer {
     this._address = address;
   }
 
-  isActive() {
+  isActive(): boolean {
     return this._active;
   }
 }

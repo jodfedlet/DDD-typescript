@@ -10,6 +10,7 @@
     "typescript": "^4.8.2"
   },
   "scripts": {
-    "test": "jest"
+    "test": "npm run tsc -- --noEmit && jest",
+    "tsc":"tsc"
   }
 }
