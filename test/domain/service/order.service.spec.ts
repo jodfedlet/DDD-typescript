@@ -1,7 +1,7 @@
-import OrderItem from "../../src/entity/orderItem";
-import Order from "../../src/entity/order";
-import OrderService from "../../src/service/order.service";
-import Customer from "../../src/entity/customer";
+import OrderItem from "../../../src/domain/entity/orderItem";
+import Order from "../../../src/domain/entity/order";
+import OrderService from "../../../src/domain/service/order.service";
+import Customer from "../../../src/domain/entity/customer";
 
 describe("Order service unit test", () => {
   it("It should get total of all orders", () => {

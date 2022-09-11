@@ -1,5 +1,5 @@
-import Order from "../../src/entity/order";
-import OrderItem from "../../src/entity/orderItem";
+import Order from "../../../src/domain/entity/order";
+import OrderItem from "../../../src/domain/entity/orderItem";
 
 describe("Order unit tests", () => {
   it("Should throw error when id is empty", () => {
